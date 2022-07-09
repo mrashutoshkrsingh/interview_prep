@@ -2,17 +2,6 @@
 
 // Here we monitor the delay user gives between two key presses. If this delay matches our threshold limit, then we make another API call.
 
-const debounceFunc = (func, delay) => {
-  let timer;
-  return function (...args) {
-    const context = this;
-    clearTimeOut(timer);
-    timer = setTimeOut(() => {
-      func.apply(context, args);
-    }, delay);
-  };
-};
-
 const debounce = function (fn, delay) {
   let timer;
   return function (...agrs) {
